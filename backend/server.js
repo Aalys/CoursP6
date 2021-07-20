@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./app');
 
-const normalizePort = val => {  // Renvoie un port valide que ce soit sous forme de numéro ou chaine.
+const normalizePort = val => {  // Renvoie un port valide, qu'il soit fourni en numéro ou chaine.
   const port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -15,7 +15,7 @@ const normalizePort = val => {  // Renvoie un port valide que ce soit sous forme
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const errorHandler = error => {    // Recherche les différentes erreurs et les gère de manière appropriée + enregistre dans le serveur.
+const errorHandler = error => {    // Recherche différentes erreurs et les gère de manière appropriée + sauvegarde dans le serveur.
   if (error.syscall !== 'listen') {
     throw error;
   }
